@@ -1,0 +1,17 @@
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+	usb_modeswitch.c  \
+
+LOCAL_CFLAGS := -O2 -g -Wall -Wno-unused-parameter
+LOCAL_CFLAGS += -D_XOPEN_SOURCE -D_GNU_SOURCE
+
+LOCAL_MODULE := usb_modeswitch
+
+LOCAL_SHARED_LIBRARIES := libusb1.0
+LOCAL_MODULE_PATH := $(TARGET_OUT_EXECUTABLES)
+LOCAL_UNSTRIPPED_PATH := $(TARGET_OUT_EXECUTABLES_UNSTRIPPED)
+
+include $(BUILD_EXECUTABLE)
